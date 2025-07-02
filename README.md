@@ -18,7 +18,7 @@ The HGMoE pipeline involves:
    - Edges are constructed based on:
      - **Temporal** adjacency.
      - **Semantic** similarity (cosine distance > θ).
-     - **AU co-activation** patterns.
+     - **self-loop** .
 3. **Heterogeneous Graph Learning**:
    - Incorporates edge **category-aware attention**.
    - Leverages a **Mixture-of-Experts (MoE)** module to capture diverse relations.
