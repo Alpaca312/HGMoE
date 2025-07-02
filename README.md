@@ -23,3 +23,5 @@ The HGMoE pipeline involves:
    - Incorporates edge **category-aware attention**.
    - Leverages a **Mixture-of-Experts (MoE)** module to capture diverse relations.
    - Multi-loss training with expert diversity and attention regularization.
+
+![HGMoE](framework_image/framework.png)
