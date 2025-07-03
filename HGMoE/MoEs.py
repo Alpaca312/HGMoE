@@ -72,6 +72,19 @@ class MoE(nn.Module):
         self.edge_proj = nn.Linear(edge_attr_size, num_experts)
 
 
+        #Selection of a suitable expert network based on the type of dataset
+        # if expert_type == 'gcn':
+        #     self.experts = nn.ModuleList([GCNConv(self.input_size, self.output_size) for _ in range(self.num_experts)])
+        # elif expert_type == 'gat':
+        #     self.experts = nn.ModuleList([GATConv(self.input_size, self.output_size) for _ in range(self.num_experts)])
+        # elif expert_type == 'nnconv':
+        #     assert edge_attr_dim is not None, "edge_attr_dim must be provided for NNConv experts"
+        #     self.experts = nn.ModuleList(
+        #         [NNConv(self.input_size, self.output_size, nn.Linear(edge_attr_dim, self.input_size * self.output_size))
+        #          for _ in range(self.num_experts)])
+        # else:
+        #     raise ValueError("Unsupported expert type")
+
         self.experts = nn.ModuleList()
         for i in range(num_experts):
             if i % 3 == 0:  # Expert 0, 3, 6...
